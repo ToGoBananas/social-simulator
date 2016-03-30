@@ -6,14 +6,14 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
+from model_utils import Choices
 
 
 @python_2_unicode_compatible
 class User(AbstractUser):
-
-    # First Name and Last Name do not cover name patterns
-    # around the globe.
+    TYPE_CHOICES = Choices('Player', 'Media player', 'Controller')
     name = models.CharField(_("Name of User"), blank=True, max_length=255)
+    type = models.CharField(choices=TYPE_CHOICES, max_length=20, null=True)
 
     def __str__(self):
         return self.username

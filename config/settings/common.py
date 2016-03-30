@@ -38,13 +38,12 @@ THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
-    'allauth.socialaccount',  # registration
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'social_simulator.users',  # custom users app
-    # Your stuff: custom apps go here
+    'social_simulator.dashboard'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
