@@ -63,9 +63,13 @@ module.exports = function (grunt) {
               sourceMap: false,
               precision: 10
           },
-          files: {
-              '<%= paths.css %>/project.css': '<%= paths.sass %>/project.scss'
-          },
+          files: [{
+            expand: true,
+            cwd: '<%= paths.sass %>',
+            src: ['*.scss'],
+            dest: '<%= paths.css %>',
+            ext: '.css'
+          }]
       },
       dist: {
           options: {
@@ -73,9 +77,13 @@ module.exports = function (grunt) {
               sourceMap: false,
               precision: 10
           },
-          files: {
-              '<%= paths.css %>/project.css': '<%= paths.sass %>/project.scss'
-          },
+          files: [{
+            expand: true,
+            cwd: '<%= paths.sass %>',
+            src: ['*.scss'],
+            dest: '<%= paths.css %>',
+            ext: '.css'
+          }]
       }
     },
 
@@ -112,12 +120,12 @@ module.exports = function (grunt) {
       runDjango: {
         cmd: 'python <%= paths.manageScript %> runserver'
       },
-      
+
     }
   });
 
   grunt.registerTask('serve', [
-    
+
     'bgShell:runDjango',
     'watch'
   ]);
