@@ -38,12 +38,16 @@ THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
+    'allauth.socialaccount',
+    'ckeditor',
+    'ckeditor_uploader'
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'social_simulator.users',  # custom users app
-    'social_simulator.dashboard'
+    'social_simulator.dashboard',
+    'social_simulator.facebook'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -229,3 +233,4 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+CKEDITOR_UPLOAD_PATH = "ckeditor/"
