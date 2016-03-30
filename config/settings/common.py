@@ -40,7 +40,7 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
 )
 
 # Apps specific for this project go here.
@@ -234,3 +234,5 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+AWS_QUERYSTRING_AUTH = False
