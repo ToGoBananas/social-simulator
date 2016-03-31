@@ -15,7 +15,7 @@ class User(AbstractUser):
     TYPE_CHOICES = Choices('Player', 'Media player', 'Controller')
     name = models.CharField(_("Name of User"), blank=True, max_length=255)
     type = models.CharField(choices=TYPE_CHOICES, max_length=20, null=True)
-    avatar = models.ImageField(default=settings.STATIC_URL + 'images/avatar.jpg')
+    avatar = models.ImageField(upload_to='avatars', null=True)
 
     def __str__(self):
         return self.username
