@@ -20,7 +20,7 @@
     <!-- Your stuff: Third-party css libraries go here -->
 
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'css/facebook.css' %}" rel="stylesheet">
     {% endblock %}
 
   </head>
@@ -30,7 +30,7 @@
     <div class="m-b">
       <nav class="navbar navbar-dark navbar-static-top bg-inverse">
         <div class="container">
-          <a class="navbar-brand" href="/">social_simulator</a>
+          <a class="navbar-brand" href="/"><img height="25" src="{% static 'images/facebook/fb.png' %}"></a>
           <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
             &#9776;
           </button>
@@ -39,13 +39,7 @@
           <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'dashboard:index' %}">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-link" href="{% url 'dashboard:index' %}">Back to dashboard</a>
               </li>
             </ul>
 
@@ -71,16 +65,30 @@
       </nav>
     </div><br>
 
-    <div class="container">
-
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-          {% endfor %}
-      {% endif %}
+    <div class="container" id="posts">
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+          {% for post in posts %}
+              <div class="post">
+                  <div class="header row">
+                          <div class="col-md-2 avatar"><img class="img-fluid" src="{{ user.avatar.url }}"></div>
+                          <div class="col-md-10">
+                              <div class="username"><a href="#">{{ post.user }}</a></div>
+                              <div class="data"><abbr title="{{ post.created }}">{{ post.posted }}</abbr></div>
+                          </div>
+                  </div>
+                  <div class="row content">
+                      <div class="col-md-12">{{ post.text|safe }}</div>
+                  </div>
+                  <div class="row info">
+                      <div class="col-md-12">
+                          <span>{{ post.likes }} likes</span>
+                          <span class="pull-xs-right">{{ post.comments.count }} comments</span>
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+        {% include 'facebook/posts.html' %}
       {% endblock content %}
 
     </div> <!-- /container -->

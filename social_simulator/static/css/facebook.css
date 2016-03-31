@@ -1,0 +1,43 @@
+nav.navbar {
+  background-color: #3D5B99;
+  line-height: 16px; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #E9EAED; }
+
+#posts {
+  width: 70%;
+  max-width: 520px; }
+  #posts .post {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px #DFE0E4 solid; }
+    #posts .post .header {
+      padding-bottom: 10px; }
+    #posts .post .username {
+      font-size: larger; }
+    #posts .post .data, #posts .post .info {
+      font-size: small;
+      color: darkgray; }
+    #posts .post .content {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.3167px; }
+      #posts .post .content img {
+        max-width: 100%;
+        max-height: 100%; }
+    #posts .post .info {
+      margin-top: 10px; }
+      #posts .post .info span {
+        cursor: pointer; }
+      #posts .post .info span:hover {
+        border-bottom: 1px solid; }
+
+abbr[title] {
+  cursor: pointer;
+  border-bottom-style: none; }
+
+[hidden][style="display: block;"] {
+  display: block !important; }
