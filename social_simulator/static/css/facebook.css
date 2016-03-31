@@ -11,14 +11,14 @@ body {
   max-width: 520px; }
   #posts .post {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 12px;
     background-color: #ffffff;
     border: 1px #DFE0E4 solid; }
     #posts .post .header {
       padding-bottom: 10px; }
     #posts .post .username {
       font-size: larger; }
-    #posts .post .data, #posts .post .info {
+    #posts .post .data, #posts .post .info, #posts .post .help_text {
       font-size: small;
       color: darkgray; }
     #posts .post .content {
@@ -29,15 +29,31 @@ body {
         max-width: 100%;
         max-height: 100%; }
     #posts .post .info {
-      margin-top: 10px; }
+      margin-top: 10px;
+      margin-bottom: 10px; }
       #posts .post .info span {
         cursor: pointer; }
       #posts .post .info span:hover {
         border-bottom: 1px solid; }
+    #posts .post .like {
+      max-height: 22px;
+      cursor: pointer; }
+    #posts .post .comments {
+      margin-top: 10px; }
+    #posts .post .comment {
+      margin-bottom: 7px; }
 
 abbr[title] {
   cursor: pointer;
   border-bottom-style: none; }
+
+textarea {
+  font-size: 12px;
+  width: 100%;
+  padding: 5px; }
+
+.comments_block {
+  display: none; }
 
 [hidden][style="display: block;"] {
   display: block !important; }

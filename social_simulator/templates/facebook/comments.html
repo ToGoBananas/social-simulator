@@ -1,0 +1,10 @@
+{% for comment in comments %}
+    <div class="row comment">
+          <div class="col-md-2 avatar">
+              <img class="img-fluid" src="{{ comment.user.avatar.url }}">
+          </div>
+        <div class="col-md-10 comment_text">
+            <a href="#">{{ user.username }}</a><br> {{ comment.text }}
+        </div>
+    </div>
+{% endfor %}

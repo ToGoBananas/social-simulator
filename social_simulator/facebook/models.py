@@ -17,7 +17,7 @@ class FacebookPost(Post):
 
     @cached_property
     def comments(self):
-        return self.comment_set.all()
+        return self.comment_set.order_by('-created')
 
 
 class FacebookPostLikes(models.Model):
@@ -30,7 +30,7 @@ class FacebookPostLikes(models.Model):
 
 class Comment(TimeStampedModel):
     post = models.ForeignKey(FacebookPost)
-    user = models.OneToOneField(User)
+    user = models.ForeignKey(User)
     text = models.TextField(max_length=200)
 
     def __str__(self):

@@ -17,7 +17,7 @@ body {
 
   .post {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 12px;
     background-color: #ffffff;
     border: 1px #DFE0E4 solid;
 
@@ -29,7 +29,7 @@ body {
       font-size: larger;
     }
 
-    .data, .info {
+    .data, .info, .help_text {
       font-size: small;
       color: darkgray;
     }
@@ -46,12 +46,26 @@ body {
 
     .info {
       margin-top: 10px;
+      margin-bottom: 10px;
       span {
         cursor: pointer;
       }
       span:hover {
         border-bottom: 1px solid;
       }
+    }
+
+    .like {
+      max-height: 22px;
+      cursor: pointer;
+    }
+
+    .comments {
+      margin-top: 10px;
+    }
+
+    .comment {
+      margin-bottom: 7px;
     }
   }
 }
@@ -62,6 +76,16 @@ abbr[title] {
   border-bottom-style: none;
 }
 
+
+textarea {
+  font-size: 12px;
+  width: 100%;
+  padding: 5px;
+}
+
+.comments_block {
+  display: none;
+}
 
 // Display django-debug-toolbar.
 // See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742

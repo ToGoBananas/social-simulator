@@ -69,9 +69,9 @@
 
       {% block content %}
           {% for post in posts %}
-              <div class="post">
+              <div class="post" data-pk="{{ post.pk }}">
                   <div class="header row">
-                          <div class="col-md-2 avatar"><img class="img-fluid" src="{{ user.avatar.url }}"></div>
+                          <div class="col-md-2 avatar"><img class="img-fluid" src="{{ post.user.avatar.url }}"></div>
                           <div class="col-md-10">
                               <div class="username"><a href="#">{{ post.user }}</a></div>
                               <div class="data"><abbr title="{{ post.created }}">{{ post.posted }}</abbr></div>
@@ -82,9 +82,22 @@
                   </div>
                   <div class="row info">
                       <div class="col-md-12">
-                          <span>{{ post.likes }} likes</span>
-                          <span class="pull-xs-right">{{ post.comments.count }} comments</span>
+                          <span class="likes_quantity">{{ post.likes }}</span> likes
+                          <img class="like" src="{% static 'images/facebook/like.png' %}">
+                          <span class="pull-xs-right show_comments">{{ post.comments.count }} comments</span>
                       </div>
+                  </div>
+                  <div class="comments_block">
+                      <div class="row add_comment">
+                          <div class="col-md-2 avatar">
+                              <img class="img-fluid" src="{{ user.avatar.url }}">
+                          </div>
+                          <div class="col-md-10 create_comment">
+                              <textarea placeholder="Write a comment" rows="1"></textarea>
+                              <div class="help_text">Press Enter to post</div>
+                          </div>
+                      </div>
+                      <div class="comments"></div>
                   </div>
               </div>
           {% endfor %}
@@ -109,9 +122,12 @@
       <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 
       <!-- Your stuff: Third-party javascript libraries go here -->
+      <script src="{% static 'js/js.cookie.js' %}"></script>
+      <script src="{% static 'js/ajax_setup.js' %}"></script>
 
       <!-- place project specific Javascript in this file -->
-      <script src="{% static 'js/project.js' %}"></script>
+      <script src="{% static 'js/facebook/facebook.js' %}"></script>
+
     {% endblock javascript %}
   </body>
 </html>
