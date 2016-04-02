@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.functional import cached_property
 from django.core.urlresolvers import reverse
-from django.utils.timesince import timesince
 
 from model_utils.models import TimeStampedModel
 
@@ -11,10 +10,6 @@ from social_simulator.users.models import User
 
 class FacebookPost(Post):
     likes = models.PositiveIntegerField(default=0)
-
-    @property
-    def posted(self):
-        return timesince(self.created) + ' ago'
 
     @cached_property
     def comments(self):

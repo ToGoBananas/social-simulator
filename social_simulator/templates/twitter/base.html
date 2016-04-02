@@ -20,7 +20,7 @@
     <!-- Your stuff: Third-party css libraries go here -->
 
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/facebook.css' %}" rel="stylesheet">
+    <link href="{% static 'css/twitter.css' %}" rel="stylesheet">
     {% endblock %}
 
   </head>
@@ -30,7 +30,7 @@
     <div class="m-b">
       <nav class="navbar navbar-dark navbar-static-top bg-inverse">
         <div class="container">
-          <a class="navbar-brand" href="/"><img height="25" src="{% static 'images/facebook/fb.png' %}"></a>
+          <a class="navbar-brand" href="/"><img height="25" src="{% static 'images/twitter/logo.png' %}"></a>
           <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
             &#9776;
           </button>
@@ -45,7 +45,7 @@
           </div>
         </div>
       </nav>
-    </div><br>
+    </div>
 
     <div class="container" id="posts">
 
@@ -55,31 +55,18 @@
                   <div class="header row">
                           <div class="col-md-2 avatar"><img class="img-fluid" src="{{ post.user.avatar.url }}"></div>
                           <div class="col-md-10">
-                              <div class="username"><a href="#">{{ post.user }}</a></div>
-                              <div class="data"><abbr title="{{ post.created }}">{{ post.time_since }} ago</abbr></div>
+                              <span class="username"><a href="#">{{ post.user }}</a> @{{ post.user }}</span>
+                              <span class="data">&middot; <abbr title="{{ post.created }}">{{ post.time_since }}</abbr></span>
+                              <div class="content">
+                                  {{ post.text|safe }}
+                              </div>
                           </div>
                   </div>
-                  <div class="row content">
-                      <div class="col-md-12">{{ post.text|safe }}</div>
-                  </div>
-                  <div class="row info">
+                  <div class="row info retweet">
                       <div class="col-md-12">
-                          <span class="likes_quantity">{{ post.likes }}</span> likes
-                          <img class="like" src="{% static 'images/facebook/like.png' %}">
-                          <span class="pull-xs-right show_comments">{{ post.comments.count }} comments</span>
+                          <img src="{% static 'images/twitter/retweet.png' %}">
+                          <span class="retweets_quantity">{{ post.retweets }}</span>
                       </div>
-                  </div>
-                  <div class="comments_block">
-                      <div class="row add_comment">
-                          <div class="col-md-2 avatar">
-                              <img class="img-fluid" src="{{ user.avatar.url }}">
-                          </div>
-                          <div class="col-md-10 create_comment">
-                              <textarea placeholder="Write a comment" rows="1"></textarea>
-                              <div class="help_text">Press Enter to post</div>
-                          </div>
-                      </div>
-                      <div class="comments"></div>
                   </div>
               </div>
           {% endfor %}
@@ -107,7 +94,7 @@
       <script src="{% static 'js/ajax_setup.js' %}"></script>
 
       <!-- place project specific Javascript in this file -->
-      <script src="{% static 'js/facebook.js' %}"></script>
+      <script src="{% static 'js/twitter.js' %}"></script>
 
     {% endblock javascript %}
   </body>

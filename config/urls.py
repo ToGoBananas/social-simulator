@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^dashboard/', include("social_simulator.dashboard.urls", namespace="dashboard")),
     url(r'^facebook/', include("social_simulator.facebook.urls", namespace="facebook")),
+    url(r'^twitter/', include("social_simulator.twitter.urls", namespace="twitter")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

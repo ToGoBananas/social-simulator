@@ -1,0 +1,68 @@
+nav.navbar {
+  background-color: #ffffff;
+  line-height: 15px; }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: black; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #F5F8FA; }
+
+#posts {
+  width: 70%;
+  max-width: 580px;
+  margin-top: 10px; }
+  #posts .post {
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px #DFE0E4 solid; }
+    #posts .post .username {
+      font-size: small;
+      color: darkgray; }
+      #posts .post .username a {
+        font-size: larger;
+        color: black; }
+      #posts .post .username a:hover {
+        color: #0084B5; }
+    #posts .post .data, #posts .post .info, #posts .post .help_text {
+      font-size: small;
+      color: #ABBBC6; }
+    #posts .post .info {
+      font-weight: bolder;
+      font-size: large; }
+      #posts .post .info :hover {
+        color: #19CF86;
+        cursor: pointer; }
+      #posts .post .info img {
+        margin-bottom: 9px; }
+    #posts .post .content {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.3167px;
+      margin-top: 5px; }
+      #posts .post .content img {
+        max-width: 100%;
+        max-height: 100%; }
+    #posts .post .info span {
+      cursor: pointer; }
+    #posts .post .info span:hover {
+      border-bottom: 1px solid; }
+    #posts .post .like {
+      max-height: 22px;
+      cursor: pointer; }
+
+abbr[title] {
+  cursor: pointer;
+  border-bottom-style: none; }
+
+textarea {
+  font-size: 12px;
+  width: 100%;
+  padding: 5px; }
+
+.comments_block {
+  display: none; }
+
+[hidden][style="display: block;"] {
+  display: block !important; }

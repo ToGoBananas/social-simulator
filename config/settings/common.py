@@ -47,7 +47,8 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'social_simulator.users',  # custom users app
     'social_simulator.dashboard',
-    'social_simulator.facebook'
+    'social_simulator.facebook',
+    'social_simulator.twitter'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
