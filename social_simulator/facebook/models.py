@@ -1,11 +1,12 @@
 from django.db import models
 from django.utils.functional import cached_property
+from django.core.urlresolvers import reverse
+from django.utils.timesince import timesince
 
-from social_simulator.dashboard.models import Post
 from model_utils.models import TimeStampedModel
 
+from social_simulator.dashboard.models import Post
 from social_simulator.users.models import User
-from django.utils.timesince import timesince
 
 
 class FacebookPost(Post):
@@ -18,6 +19,10 @@ class FacebookPost(Post):
     @cached_property
     def comments(self):
         return self.comment_set.order_by('-created')
+
+    @staticmethod
+    def get_url():
+        return reverse('facebook:index')
 
 
 class FacebookPostLikes(models.Model):

@@ -11,6 +11,10 @@ class Post(TimeStampedModel):
 
     class Meta:
         abstract = True
+        ordering = ('-created', )
 
     def __str__(self):
         return self.user.username
+
+    def provider(self):
+        return str(self.__class__.__name__).replace('Post', '')
