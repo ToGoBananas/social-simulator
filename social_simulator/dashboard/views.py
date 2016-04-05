@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from social_simulator.emails.models import Message
 from .models import Post
 
 
@@ -17,4 +18,5 @@ class DashboardView(LoginRequiredMixin, TemplateView):
         for post_provider in Post.__subclasses__():
             posts.append(post_provider.objects.last())
         context['posts'] = posts
+        context['emails'] = Message.objects.filter(recipient=self.request.user)
         return context

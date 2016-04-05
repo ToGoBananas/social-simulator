@@ -21,5 +21,20 @@
             </a>
             <div class="col-md-1"></div>
         {% endfor %}
+            <a href="{{ post.get_url }}" target="_blank" class="col-md-3 post">
+                <div class="provider">Emails</div>
+                {% if emails %}
+                    <div class="last_post">
+                        {{ emails.last.theme }}
+                        <br>
+                        {{ emails.last.created }}
+                    </div>
+                {% else %}
+                    <div class="last_post">
+                        Empty
+                    </div>
+                {% endif %}
+            </a>
+            <div class="col-md-1"></div>
     </div>
 {% endblock %}

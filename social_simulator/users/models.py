@@ -18,7 +18,7 @@ class User(AbstractUser):
     avatar = models.ImageField(upload_to='avatars', null=True)
 
     def __str__(self):
-        return self.username
+        return self.email
 
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
