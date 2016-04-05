@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %}Emails{% endblock %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Emails</h2>
+
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>date</th>
+          <th>sender</th>
+          <th>theme</th>
+          <th>message</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for message in message_list %}
+        <tr>
+          <th scope="row">{{ message.created }}</th>
+          <td>{{ message.sender.email }}</td>
+          <td>{{ message.theme }}</td>
+          <td>{{ message.text }}</td>
+{#          <td>#}
+{#              {% if message.status == 'send' %}#}
+{#                  <button type="button" class="btn btn-success">Open</button>#}
+{#              {% else %}#}
+{#                  <button type="button" class="btn btn-secondary">Open</button>#}
+{#              {% endif %}#}
+{#          </td>#}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+</div>
+
+<div class="container">
+    <h2></h2>
+    {% crispy form %}
+</div>
+
+{% endblock content %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="{% static 'js/emails.js' %}"></script>
+{% endblock %}
