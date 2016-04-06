@@ -1,0 +1,119 @@
+$blue: #3157a1;
+
+#site_header {
+  height: 140px;
+  background: url("/static/images/sky_news/grad.jpg") no-repeat scroll center top;
+}
+
+body {
+  font-family: SkyText,​Helvetica,​Arial,​Verdana;
+}
+
+.banners {
+  padding-top: 30px;
+}
+
+.nav_links {
+  padding-top: 28px;
+}
+
+
+.posts {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.posts_content {
+  margin-top: 7px;
+}
+
+.posts {
+  .header {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    color: #333;
+    margin-top: 10px;
+  }
+  .header:hover {
+    color: $blue;
+    cursor: pointer;
+  }
+  .short_text {
+    font-size: 1.025rem;
+    line-height: 1.375rem;
+    margin: 7px 0 18px 0;
+    font-weight: lighter;
+  }
+
+  .first_post {
+    margin-bottom: 10px;
+    .header {
+      font-size: 1.675rem;
+      line-height: 2.15rem;
+      margin-bottom: 9px;
+      margin-top: 0;
+    }
+  }
+}
+
+a.open_post {
+  text-decoration: none;
+}
+
+#news_header {
+  margin-top: 30px;
+  font-size: 1.625rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+
+@media (max-width: 1000px) {
+  .container {
+    max-width: 98%;
+  }
+}
+
+
+#A_1 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 34px;
+    min-width: 138px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 138px;
+    perspective-origin: 69px 17px;
+    transform-origin: 69px 17px;
+    background: rgb(159, 32, 45) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal normal normal 16px / 34px SkyText, Helvetica, Arial, Verdana;
+    margin: 0px 0px 0px 12px;
+    outline: rgb(255, 255, 255) none 0px;
+    padding: 0px 10px;
+}/*#A_1*/
+
+.header_categories {
+    background-position: 0px 0px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+    border-top: 0px none rgb(51, 51, 51);
+    border-right: 0px none rgb(51, 51, 51);
+    border-bottom: 2px solid rgb(49, 87, 161);
+    border-left: 0px none rgb(51, 51, 51);
+    font: normal normal bold normal 18px / 18px SkyText, Helvetica, Arial, Verdana;
+    list-style: none outside none;
+    outline: rgb(51, 51, 51) none 0px;
+}
+

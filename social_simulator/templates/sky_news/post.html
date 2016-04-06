@@ -1,0 +1,28 @@
+{% extends 'sky_news/base.html' %}
+
+
+
+{% block content %}
+{% load static %}
+
+<br>
+<div class="container">
+    <div class="row posts_content">
+        <div class="col-md-8 col-xl-8">
+            <div class="row posts">
+                <div class="col-md-12 first_post">
+                    <a href="{% url 'sky_news:post' post.pk %}" class="open_post">
+                        <div class="header">{{ post.header }}</div>
+                        <img src="{{ post.header_image.url }}" class="img-fluid img">
+                    </a>
+                    <div class="short_text" style="font-weight: bold">{{ post.short_text }}</div>
+                    <div>{{ post.text|safe }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <img src="{% static 'images/sky_news/right_block.png' %}" class="img-fluid img">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<div class="container">
+    <div id="news_header">Top stories</div>
+    <div class="row"><div class="col-md-8 col-xl-8"><hr></div></div>
+    <div class="row posts_content">
+        <div class="col-md-8 col-xl-8">
+            <div class="row posts">
+                {% for post in posts %}
+                    {% if forloop.first %}
+                        <div class="col-md-12 first_post">
+                            <a href="{% url 'sky_news:post' post.pk %}" class="open_post">
+                                <div class="header">{{ post.header }}</div>
+                                <img src="{{ post.header_image.url }}" class="img-fluid img">
+                            </a>
+                            <div class="short_text">{{ post.short_text }}</div>
+                        </div>
+                    {% else %}
+                        <div class="col-md-4 post">
+                            <a href="{% url 'sky_news:post' post.pk %}" class="open_post">
+                                <img src="{{ post.header_image.url }}" class="img-fluid img">
+                                <div class="header">{{ post.header }}</div>
+                            </a>
+                            <div class="short_text">{{ post.short_text }}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 col-xl-4">
+            <img src="{% static 'images/sky_news/right_block.png' %}" class="img-fluid img">
+        </div>
+    </div>
+</div>
