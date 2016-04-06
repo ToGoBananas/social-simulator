@@ -1,6 +1,7 @@
 .post {
   background-color: lightgray;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 18px; }
 
 .post:hover {
   text-decoration: none; }

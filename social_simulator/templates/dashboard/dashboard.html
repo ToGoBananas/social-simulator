@@ -21,7 +21,7 @@
             </a>
             <div class="col-md-1"></div>
         {% endfor %}
-            <a href="{{ post.get_url }}" target="_blank" class="col-md-3 post">
+            <a href="{% url 'emails:list' %}" target="_blank" class="col-md-3 post">
                 <div class="provider">Emails</div>
                 {% if emails %}
                     <div class="last_post">
