@@ -1,0 +1,67 @@
+{% load staticfiles i18n %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}blog | social_simulator{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% block css %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+    <!-- Your stuff: Third-party css libraries go here -->
+
+    <!-- This file store project specific CSS -->
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <a href="{% url 'blog:index' %}" class="col-md-12 blog_header"><h1>The blogger</h1></a>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12" id="header">
+                <img src="{% static 'images/blog/header.png' %}" class="center-block img-fluid">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-3" id="right_block">
+                <img src="{% static 'images/blog/right_block.png' %}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+      <!-- Latest JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+      <!-- place project specific Javascript in this file -->
+      <script src="{% static 'js/blog.js' %}"></script>
+    {% endblock javascript %}
+  </body>
+</html>
+

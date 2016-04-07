@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^twitter/', include("social_simulator.twitter.urls", namespace="twitter")),
     url(r'^emails/', include("social_simulator.emails.urls", namespace="emails")),
     url(r'^sky_news/', include("social_simulator.sky_news.urls", namespace="sky_news")),
+    url(r'^blog/', include("social_simulator.blog.urls", namespace="blog")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -11,17 +11,27 @@
 {% block content %}
     <div class="container">
         {% for post in posts %}
-            <a href="{{ post.get_url }}" target="_blank" class="col-md-3 post">
-                <div class="provider">{{ post.provider }}</div>
-                <div class="last_post">
-                    {{ post }}
-                    <br>
-                    {{ post.created }}
-                </div>
-            </a>
-            <div class="col-md-1"></div>
+            {% if post.get_url %}
+                <a href="{{ post.get_url }}" target="_blank" class="col-md-3 post">
+                    <div class="provider">{{ post.provider }}</div>
+                    <div class="last_post">
+                        {{ post }}
+                        <br>
+                        {{ post.created }}
+                    </div>
+                </a>
+                <div class="col-md-1"></div>
+            {% else %}
+                <a href="#" target="_blank" class="col-md-3 post">
+                    <div class="provider">None posts for this provider</div>
+                    <div class="last_post">
+                        Empty
+                    </div>
+                </a>
+                <div class="col-md-1"></div>
+            {% endif %}
         {% endfor %}
-            <a href="{% url 'emails:list' %}" target="_blank" class="col-md-3 post">
+            <a href="{% url 'emails:index' %}" target="_blank" class="col-md-3 post">
                 <div class="provider">Emails</div>
                 {% if emails %}
                     <div class="last_post">

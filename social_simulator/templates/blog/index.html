@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+<div class="row">
+    {% for post in posts %}
+        <div class="col-md-12 post">
+            <div class="header">
+                <a href="{% url 'blog:post' post.pk %}"><h2>{{ post.header }}</h2></a>
+                <div class="date">Posted on {{ post.created }}</div>
+            </div>
+            <div class="text">
+                {{ post.text|safe }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

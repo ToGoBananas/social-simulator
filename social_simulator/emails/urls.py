@@ -10,7 +10,7 @@ urlpatterns = [
     url(
         regex=r'^$',
         view=views.MessageListView.as_view(),
-        name='list'
+        name='index'
     ),
     url(
         regex=r'^create/$',

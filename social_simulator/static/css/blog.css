@@ -1,0 +1,30 @@
+#header.img {
+  margin: 0 auto; }
+
+.blog_header {
+  color: black; }
+
+.blog_header:hover {
+  text-decoration: none; }
+
+.post {
+  margin-bottom: 15px;
+  margin-top: 15px; }
+  .post .date {
+    font-size: small;
+    color: grey; }
+  .post .header {
+    margin-bottom: 22px; }
+  .post .text {
+    max-height: 350px;
+    overflow: hidden; }
+
+.comment {
+  margin-top: 15px; }
+
+.comment_text {
+  margin-top: 4px; }
+
+.like {
+  font-size: small;
+  color: grey; }

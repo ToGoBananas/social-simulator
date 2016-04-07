@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 post">
+            <div class="header">
+                <a href="{% url 'blog:post' post.pk %}"><h2>{{ post.header }}</h2></a>
+                <div class="date">Posted on {{ post.created }}</div>
+            </div>
+            <div class="">
+                {{ post.text|safe }}
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <h2>Comments</h2>
+    <div class="row comments">
+        {% for comment in post.comments %}
+            <div class="row comment">
+                <div class="col-md-1 avatar">
+                  <img class="img-fluid" src="{{ comment.user.avatar.url }}">
+                </div>
+                <div class="col-md-11">
+                    {{ comment.user.username }}
+                </div>
+                <div class="col-md-12 comment_text">{{ comment.text }}</div>
+                <div class="col-md-12 like">{{ comment.likes }} users like this</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+

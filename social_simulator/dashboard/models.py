@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 
 
 class Post(TimeStampedModel):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, null=True)
     text = RichTextField()
 
     class Meta:
