@@ -1,0 +1,80 @@
+$red: #D10A11;
+$lightpink: #F9F6F2;
+
+body {
+  font-family: Austin News Text Semibold;
+}
+
+
+#logo {
+  margin-top: 15px;
+}
+
+
+#navigation span:not(:last-child) {
+  border-right: solid grey 1px;
+}
+
+#navigation span {
+  padding: 0 7px 0 5px;
+  font-weight: bold;
+}
+
+
+#navigation span:hover {
+  cursor: pointer;
+  color: $red;
+}
+
+
+h1 {
+  color: $red;
+  background-color: $lightpink;
+  width: 100%;
+  padding: 10px 5px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 0;
+  border-bottom: 5px solid $red;
+  font-family: Austin News Deck Semibold;
+  text-decoration: none;
+}
+
+h1:hover {
+  text-decoration: none;
+}
+
+
+.post {
+  padding: 5px 0;
+  margin-bottom: 12px;
+
+  div {
+    border-top: 1px solid grey;
+    padding-top: 7px;
+  }
+
+  .date {
+    color: grey;
+    font-size: small;
+    border-right: 1px solid grey;
+  }
+
+  .header {
+    font-size: large;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}

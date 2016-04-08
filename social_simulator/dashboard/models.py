@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 
 
 class Post(TimeStampedModel):
-    user = models.ForeignKey(User, null=True)
+    user = models.ForeignKey(User, null=True, blank=True)
     text = RichTextField()
 
     class Meta:
@@ -16,7 +16,25 @@ class Post(TimeStampedModel):
         ordering = ('-created', )
 
     def __str__(self):
-        return self.user.username
+        try:
+            self.header
+        except AttributeError:
+            pass
+        else:
+            return self.header
+        try:
+            self.theme
+        except AttributeError:
+            pass
+        else:
+            return self.theme
+        try:
+            self.user
+        except AttributeError:
+            pass
+        else:
+            return self.user.username
+        return self.text[:10]
 
     def provider(self):
         return str(self.__class__.__name__).replace('Post', '')

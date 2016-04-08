@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^sky_news/', include("social_simulator.sky_news.urls", namespace="sky_news")),
     url(r'^blog/', include("social_simulator.blog.urls", namespace="blog")),
     url(r'^bbc/', include("social_simulator.bbc.urls", namespace="bbc")),
+    url(r'^telegraph/', include("social_simulator.telegraph.urls", namespace="telegraph")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

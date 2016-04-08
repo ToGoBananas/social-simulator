@@ -1,0 +1,18 @@
+{% extends 'telegraph/base.html' %}
+
+
+{% block content %}
+    {% for post in posts %}
+        <a href="{% url 'telegraph:post' post.pk %}" class="row post">
+            <div class="col-md-2 col-md-offset-1 date">
+                {{ post.time_since }}
+            </div>
+            <div class="col-md-5 header">
+                {{ post.header }}
+            </div>
+            <div class="col-md-3">
+                <img src="{{ post.header_image.url }}" class="img-fluid">
+            </div>
+        </a>
+    {% endfor %}
+{% endblock %}

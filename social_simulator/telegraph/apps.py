@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TelegraphConfig(AppConfig):
-    name = 'telegraph'
+    name = 'social_simulator.telegraph'
