@@ -1,0 +1,11 @@
+{% extends 'bbc/base.html' %}
+
+
+{% block content %}
+    <div class="">
+        <h1 class="">{{ post.header }}</h1>
+        <img src="{{ post.header_image.url }}" class="img-fluid img">
+        <div class="short_text" style="font-weight: bold">{{ post.short_text }}</div>
+        <div>{{ post.text|safe }}</div>
+    </div>
+{% endblock %}

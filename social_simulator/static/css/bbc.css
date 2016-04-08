@@ -1,0 +1,39 @@
+#logo {
+  padding: 8px 10px; }
+
+#red {
+  background-color: #BB1919;
+  width: 100%;
+  padding: 10px 0; }
+
+#navbar {
+  background-color: #A91717;
+  width: 100%; }
+
+.post_wrap {
+  background-color: #EDEDED; }
+
+.open_post {
+  color: black; }
+
+.open_post:hover {
+  text-decoration: none; }
+
+.short_text {
+  color: grey; }
+
+.header {
+  font-weight: bolder;
+  font-size: 110%; }
+
+.header, .short_text, .date {
+  padding: 3px 6px 5px 6px; }
+
+.date {
+  font-size: small;
+  color: grey; }
+
+.tag {
+  color: #BB1919;
+  text-decoration: underline;
+  cursor: pointer; }
