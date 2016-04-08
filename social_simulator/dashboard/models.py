@@ -36,8 +36,13 @@ class Post(TimeStampedModel):
             return self.user.username
         return self.text[:10]
 
+    @property
     def provider(self):
         return str(self.__class__.__name__).replace('Post', '')
+
+    @property
+    def class_name(self):
+        return str(self.__class__.__name__)
 
     @property
     def time_since(self):

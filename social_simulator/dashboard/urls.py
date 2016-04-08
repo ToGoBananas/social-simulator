@@ -11,4 +11,9 @@ urlpatterns = [
         view=views.DashboardView.as_view(),
         name='index'
     ),
+    url(
+        regex=r'^(?P<post_class_name>.+)/$',
+        view=views.DashboardSpecificView.as_view(),
+        name='specific'
+    ),
 ]

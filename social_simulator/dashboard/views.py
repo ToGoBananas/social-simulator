@@ -20,3 +20,16 @@ class DashboardView(LoginRequiredMixin, TemplateView):
         context['posts'] = posts
         context['emails'] = Message.objects.filter(recipient=self.request.user)
         return context
+
+
+class DashboardSpecificView(LoginRequiredMixin, TemplateView):
+    template_name = 'dashboard/specific.html'
+
+    def get_context_data(self, post_class_name, **kwargs):
+        context = super(DashboardSpecificView, self).get_context_data(**kwargs)
+
+        for post in Post.__subclasses__():
+            if str(post.__name__) == post_class_name:
+                context['posts'] = post.objects.all()
+        return context
+

@@ -1,0 +1,14 @@
+{% extends 'dashboard/dashboard.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h1>Posts from {{ posts.last.provider }}</h1>
+            {% for post in posts %}
+                <div class="col-md-3 col-md-offset-1">
+                    <span style="font-weight: bold">{{ post }}</span>, created {{ post.created }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -11,6 +11,18 @@
 {% block content %}
     <div class="">
         <div class="row">
+            <h2>Show post only from: </h2>
+            {% for post in posts %}
+                {% if post.get_url %}
+                    <a class="btn btn-primary" role="button" href="{% url 'dashboard:specific' post.class_name %}">
+                        {{ post.provider }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+        <div class="row">
+            <h2>Latests posts: </h2>
             <a href="{% url 'emails:index' %}" target="_blank" class="col-md-3 post">
                 <div class="provider">Emails</div>
                 {% if emails %}
