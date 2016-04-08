@@ -1,0 +1,52 @@
+body {
+  font-family: HelveticaNeueLTStd BD;
+  background-color: #F6F6F6; }
+
+#site_header {
+  background-color: white; }
+
+#navigation {
+  vertical-align: bottom;
+  padding: 3px 0;
+  border-bottom: 1px solid grey; }
+  #navigation span {
+    padding: 0 12px;
+    font-weight: bold; }
+  #navigation span:hover {
+    cursor: pointer;
+    color: #2b81af; }
+
+#orange {
+  margin-top: 7px;
+  background: transparent linear-gradient(190deg, #fa9000, #fa9000 25%, #e28204 75%, #dd8007) repeat scroll 0 0; }
+  #orange img {
+    padding: 5px 0; }
+
+#content {
+  border-top: 4px solid #FA9000;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  background-color: white; }
+
+h1 {
+  font-weight: bold;
+  margin-left: 20px; }
+
+.post a {
+  color: black; }
+
+.header {
+  font-weight: bold;
+  font-size: 110%;
+  line-height: 100%;
+  padding-bottom: 4px; }
+
+.info {
+  color: grey;
+  font-size: small; }
+
+.tags {
+  color: blue; }
+
+.post {
+  padding: 5px; }

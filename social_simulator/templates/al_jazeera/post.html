@@ -1,0 +1,14 @@
+{% extends 'al_jazeera/base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h1 class="">{{ post.header }}</h1>
+                <img src="{{ post.header_image.url }}" class="img-fluid">
+                <div>{{ post.text|safe }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

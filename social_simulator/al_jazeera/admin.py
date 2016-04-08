@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import AljazeeraPost
+
+
+admin.site.register(AljazeeraPost)
+

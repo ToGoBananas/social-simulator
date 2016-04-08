@@ -1,0 +1,30 @@
+{% extends 'al_jazeera/base.html' %}
+
+
+{% block content %}
+    <div id="content">
+        <h1>News</h1>
+        {% for post in posts %}
+                <div class="row post">
+                    <a href="{% url 'aljazeera:post' post.pk %}" class="row post">
+                        <div class="col-md-4 col-md-offset-2">
+                            <img src="{{ post.header_image.url }}" class="img-fluid">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="header">{{ post.header }}</div>
+                            <div class="short_text">
+                                {{ post.short_text }}
+                            </div>
+                            <div class="info">
+                                {{ post.created }}
+                                {% if post.tags %}
+                                   | <span class="tags">{{ post.tags }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

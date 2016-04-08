@@ -53,7 +53,8 @@ LOCAL_APPS = (
     'social_simulator.sky_news',
     'social_simulator.blog',
     'social_simulator.bbc',
-    'social_simulator.telegraph'
+    'social_simulator.telegraph',
+    'social_simulator.al_jazeera'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
