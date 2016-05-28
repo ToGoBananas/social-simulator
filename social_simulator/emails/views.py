@@ -11,7 +11,7 @@ from .forms import MessageCreateForm
 class MessageListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
-        return Message.objects.filter(recipient=self.request.user)
+        return Message.objects.filter(recipients__in=[self.request.user])
 
     def get_context_data(self, **kwargs):
         context = super(MessageListView, self).get_context_data()

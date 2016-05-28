@@ -23,11 +23,11 @@ class Post(TimeStampedModel):
         else:
             return self.header
         try:
-            self.theme
+            self.subject
         except AttributeError:
             pass
         else:
-            return self.theme
+            return self.subject
         try:
             self.user
         except AttributeError:

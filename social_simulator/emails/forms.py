@@ -17,4 +17,4 @@ class MessageCreateForm(ModelForm):
 
     class Meta:
         model = Message
-        fields = ['recipient', 'theme', 'text']
+        fields = ['recipients', 'subject', 'text']

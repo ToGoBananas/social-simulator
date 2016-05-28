@@ -18,7 +18,7 @@ class DashboardView(LoginRequiredMixin, TemplateView):
         for post_provider in Post.__subclasses__():
             posts.append(post_provider.objects.last())
         context['posts'] = posts
-        context['emails'] = Message.objects.filter(recipient=self.request.user)
+        context['emails'] = Message.objects.filter(recipients__in=[self.request.user])
         return context
 
 

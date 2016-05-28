@@ -16,7 +16,7 @@
         <tr>
           <th>date</th>
           <th>sender</th>
-          <th>theme</th>
+          <th>subject</th>
           <th>message</th>
         </tr>
       </thead>
@@ -25,7 +25,7 @@
         <tr>
           <th scope="row">{{ message.created }}</th>
           <td>{{ message.sender.email }}</td>
-          <td>{{ message.theme }}</td>
+          <td>{{ message.subject }}</td>
           <td>{{ message.text }}</td>
 {#          <td>#}
 {#              {% if message.status == 'send' %}#}
